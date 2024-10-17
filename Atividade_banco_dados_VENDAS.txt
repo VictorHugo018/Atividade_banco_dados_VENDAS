@@ -1,0 +1,57 @@
+/*			exercicio 1			*/
+
+UPDATE DEBITOS SET SITUACAO_DEBITO = 'Atrasado'
+
+WHERE DATAVENCIMENTO < CURRENT_DATE
+
+AND  SITUACAO_DEBITO NOT IN ('Negociado', 'Pago')
+
+
+
+
+
+/*			exercicio 2			*/
+
+UPDATE DEBITOS SET SITUACAO_DEBITO = 'Pendente'
+
+WHERE DATAVENCIMENTO > CURRENT_DATE
+
+AND  SITUACAO_DEBITO NOT IN ('Pago')
+
+
+
+
+
+/*			exercicio 3			*/
+
+UPDATE DEBITOS SET SITUACAO_DEBITO = DATEADD(-5 YEAR TO DATAVENCIMENTO)
+
+WHERE SITUACAO_DEBITO = 'Negociado'
+
+
+
+
+
+/*			exercicio 4			*/
+
+SELECT P.TELEFONE, P.EMAIL, P.NOME FROM PESSOA p 
+
+
+
+
+
+/*			exercicio 5			*/
+
+SELECT p.preco_unitario FROM PRODUTO p 
+
+WHERE p.PRECO_UNITARIO > 100
+
+
+
+
+
+/*			exercicio 6			*/
+
+SELECT v.data_venda FROM VENDA v 
+
+WHERE v.DATA_VENDA = '2022/04/01'
